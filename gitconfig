@@ -1,0 +1,19 @@
+[user]
+	name = Arto Jonsson
+	email = artoj@users.noreply.github.com
+[color]
+	ui = auto
+[instaweb]
+	local = true
+[core]
+	fsyncobjectfiles = true
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+	wdiff = diff --color --color-words
+	alias = config --get-regexp ^alias\\.
+	up = "!git remote update -p; git merge --ff-only @{u}"
+[push]
+	default = simple
