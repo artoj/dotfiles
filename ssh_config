@@ -1,0 +1,9 @@
+# Prevent SSH presenting every public key when connecting to a server
+# instead each host using public key must be explicitly listed
+# using the Host directive
+Host *
+	PubkeyAuthentication no
+	IdentitiesOnly yes
+	ControlMaster auto
+	ControlPath ~/.ssh/%r@%h:%p
+	UseRoaming no
