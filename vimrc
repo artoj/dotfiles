@@ -4,6 +4,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 syntax on
+syntax spell toplevel
 set synmaxcol=256
 
 set number
