@@ -4,8 +4,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 syntax on
-syntax spell toplevel
-set synmaxcol=256
+set synmaxcol=1024
 
 set number
 set showcmd
@@ -28,7 +27,7 @@ let mapleader=","
 set laststatus=2
 set display+=lastline
 set wildmenu
-set wildignore=*.o,moc_*.cpp,ui_*.h,tags,*.pyc
+set wildignore=*.swp,*.class,*.o,moc_*.cpp,ui_*.h,tags,*.pyc
 
 set ttimeoutlen=50  " Make Esc work faster
 
@@ -74,8 +73,10 @@ if !exists('autocommands_loaded') " Don't load autocmds twice
     autocmd FileType tex setlocal textwidth=78 expandtab spell
     autocmd FileType qmake setlocal expandtab
     autocmd FileType erlang setlocal expandtab
-	autocmd FileType help nnoremap <silent><buffer> q :q<CR>
+    autocmd FileType help nnoremap <silent><buffer> q :q<CR>
     autocmd FileType markdown setlocal textwidth=78 linebreak spell
+    autocmd FileType vimwiki setlocal concealcursor=nc wrap linebreak nolist textwidth=0 wrapmargin=0
+    autocmd FileType xml syntax spell toplevel
 
     " Automatically source $MYVIMRC after writing it
     autocmd BufWritePost .vimrc source $MYVIMRC
