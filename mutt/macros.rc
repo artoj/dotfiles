@@ -1,0 +1,15 @@
+macro index M "<tag-pattern>~N<enter><tag-prefix-cond><clear-flag>N<end-cond><tag-pattern>~O<enter><tag-prefix-cond><clear-flag>O<end-cond><untag-pattern>~T<enter>" "Mark all messages in this mailbox as read"
+macro index I "<change-folder>!<enter>" "Go to inbox"
+macro index S "<save-message>+spam<enter>" "Save message to Spam"
+macro index A "<save-message>+Archive<enter>" "Archive message"
+macro index,pager ^ "!mbsync -a<return>" "Sync mailboxes"
+macro index,pager a "<pipe-message>ppl scrape --sender<return>" "Add new alias"
+
+# simulate the old url menu
+macro index,pager,attach,compose \cl "\
+<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
+<pipe-message> urlview<Enter>\
+<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
+"call urlview to extract URLs out of a message"
+
+# vim:filetype=muttrc

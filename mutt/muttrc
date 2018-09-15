@@ -1,0 +1,76 @@
+set realname="Arto Jonsson"
+set from="example@example.com"
+set sort=date
+
+set mbox_type=maildir
+set folder="$HOME/mail"
+set spoolfile=+Inbox
+set postponed=+Drafts
+set record=+"Sent Items"
+set mbox=+Archive
+set trash=+"Deleted Items"
+set sendmail="msmtpq"
+set sendmail_wait = -1
+set forward_format="Fwd: %s"
+set query_command="ppl mutt '%s'"
+
+set use_from=yes
+set envelope_from=yes
+
+unset confirmappend
+set delete
+set move=no
+unset markers
+
+# include quote when replying
+set include=yes
+set fast_reply=yes
+
+set alias_file=~/.mutt/aliases.rc
+set sort_alias=alias
+
+set pager_index_lines=9
+set pager_stop   # don't go to the next message automatically
+
+set timeout=30
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+set header_cache=~/.cache/mutt/header/
+
+set send_charset="utf-8"
+
+# * show the sender's name even if subscribed to list
+# * show if the message has attachments with letter '∘'
+# * expand the name field to 20 chars from the default 15 chars
+set index_format="%4C %Z %?X?∘& ? %{%b %d} %-20.20F (%?l?%4l&%4c?) %s"
+
+set date_format="!%a, %b %d, %Y at %H:%M:%S %Z"
+
+# ignore all headers except the listed
+ignore *
+unignore From: To: Cc: Subject: Date:
+set edit_headers=yes
+
+source ~/.mutt/aliases.rc       # aliases
+source ~/.mutt/lists.rc         # mailing lists
+source ~/.mutt/keymap.rc        # key bindings
+source ~/.mutt/macros.rc        # macros
+source ~/.mutt/mailboxes.rc     # mailboxes which will receive new mail
+
+# source ~/.mutt/gpg.rc
+
+# don't autocomplete any mailbox name when saving message, let me type it
+save-hook .* +
+
+#color normal white black
+#color attachment brightyellow black
+#color hdrdefault cyan black
+#color indicator black cyan
+#color markers brightred black
+#color quoted green black
+#color signature cyan black
+#color status brightgreen blue
+#color tilde blue black
+#color tree red black
