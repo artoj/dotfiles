@@ -12,7 +12,7 @@
 	co = checkout
 	st = status
 	br = branch
-	wdiff = diff --color --color-words
+	wdiff = diff --color-words
 	alias = config --get-regexp ^alias\\.
 	up = "!git remote update -p; git merge --ff-only @{u}"
 [push]
