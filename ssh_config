@@ -1,6 +1,13 @@
 # Prevent SSH presenting every public key when connecting to a server
 # instead each host using public key must be explicitly listed
-# using the Host directive
+# using the Host directive as follows:
+#
+# Host target_host
+#	HostName 192.168.1.1
+#	PubkeyAuthentication yes
+#	User root
+#	IdentityFile ~/.ssh/id_target_host
+#
 Host *
 	PubkeyAuthentication no
 	IdentitiesOnly yes
