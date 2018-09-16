@@ -1,3 +1,5 @@
+# vim:filetype=muttrc
+
 bind pager gg               top
 bind pager G                bottom
 bind index gg               first-entry
@@ -18,5 +20,3 @@ bind index,pager \cb        previous-page
 bind index,pager <BackTab>  previous-new-then-unread
 
 bind attach i               exit
-
-# vim:filetype=muttrc

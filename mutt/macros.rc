@@ -1,3 +1,5 @@
+# vim:filetype=muttrc
+
 macro index M "<tag-pattern>~N<enter><tag-prefix-cond><clear-flag>N<end-cond><tag-pattern>~O<enter><tag-prefix-cond><clear-flag>O<end-cond><untag-pattern>~T<enter>" "Mark all messages in this mailbox as read"
 macro index I "<change-folder>!<enter>" "Go to inbox"
 macro index S "<save-message>+spam<enter>" "Save message to Spam"
@@ -11,5 +13,3 @@ macro index,pager,attach,compose \cl "\
 <pipe-message> urlview<Enter>\
 <enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
 "call urlview to extract URLs out of a message"
-
-# vim:filetype=muttrc
