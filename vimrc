@@ -77,6 +77,7 @@ if !exists('autocommands_loaded') " Don't load autocmds twice
     autocmd FileType markdown setlocal textwidth=78 linebreak spell
     autocmd FileType vimwiki setlocal concealcursor=nc wrap linebreak nolist textwidth=0 wrapmargin=0
     autocmd FileType xml syntax spell toplevel
+	autocmd FileType python setlocal keywordprg=pydoc3
 
     " Automatically source $MYVIMRC after writing it
     autocmd BufWritePost .vimrc source $MYVIMRC
@@ -107,6 +108,10 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 " foreign spell checking
 set spelllang=en_us
 nnoremap <silent> <leader>s :set spell!<CR>
+
+" netwr
+let g:netrw_liststyle=3
+let g:netrw_banner=0
 
 " I typo these
 ia widht width
